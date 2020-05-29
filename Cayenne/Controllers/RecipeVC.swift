@@ -14,9 +14,14 @@ class RecipeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        guard let id = recipeID else {return}
+        print(id)
     }
     
-
+    
+    
+    
 
 
 }

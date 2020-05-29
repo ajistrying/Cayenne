@@ -96,11 +96,22 @@ class RecipeResultsVC: UIViewController {
     
 }
 
+// MARK: - Extensions
 
 //Extend out to passing this recipe id to another network manager to handle pulling a single recipe to display
 extension RecipeResultsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(recipeResults[indexPath.row].id)
+        let row = recipeResults[indexPath.row]
+        let idOfRecipe = row.id
+        
+        //Perform search on specific recipe given the recipe ID
+        
+        
+        
+        //Set specific recipe details into the detail screen
+        let recipeVC = RecipeVC()
+        recipeVC.recipeID = idOfRecipe
+        navigationController?.pushViewController(recipeVC, animated: true)
     }
 }
 
