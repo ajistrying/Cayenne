@@ -29,6 +29,8 @@
 		A3751A0624760E1B00A34278 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3751A0524760E1B00A34278 /* ErrorMessage.swift */; };
 		A3A5D997247C135300A913FF /* ExtensionsForUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */; };
 		A3A5D99B247F64D500A913FF /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5D99A247F64D500A913FF /* RecipeVC.swift */; };
+		A3EBE2802482277600B354FE /* SpecificRecipeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE27F2482277600B354FE /* SpecificRecipeNetworkManager.swift */; };
+		A3EBE282248227BA00B354FE /* SpecificRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE281248227BA00B354FE /* SpecificRecipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		A3751A0524760E1B00A34278 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsForUIView.swift; sourceTree = "<group>"; };
 		A3A5D99A247F64D500A913FF /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
+		A3EBE27F2482277600B354FE /* SpecificRecipeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificRecipeNetworkManager.swift; sourceTree = "<group>"; };
+		A3EBE281248227BA00B354FE /* SpecificRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A37519DC2473670100A34278 /* Recipes.swift */,
+				A3EBE281248227BA00B354FE /* SpecificRecipe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A37519DF24736A7200A34278 /* RecipeListNetworkManager.swift */,
+				A3EBE27F2482277600B354FE /* SpecificRecipeNetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 				A37519D02472364600A34278 /* ExtensionsForViewController.swift in Sources */,
 				A37519B6246EBFAA00A34278 /* CYButton.swift in Sources */,
 				A37519E024736A7200A34278 /* RecipeListNetworkManager.swift in Sources */,
+				A3EBE282248227BA00B354FE /* SpecificRecipe.swift in Sources */,
 				A37519CB2472120900A34278 /* CYTitleLabel.swift in Sources */,
 				A3751998246CF8B900A34278 /* SceneDelegate.swift in Sources */,
 				A37519B0246DDDDB00A34278 /* CYLabel.swift in Sources */,
@@ -257,6 +264,7 @@
 				A37519AE246DD1A100A34278 /* CYTextField.swift in Sources */,
 				A37519AC246DBF4600A34278 /* CookbookListVC.swift in Sources */,
 				A37519DD2473670100A34278 /* Recipes.swift in Sources */,
+				A3EBE2802482277600B354FE /* SpecificRecipeNetworkManager.swift in Sources */,
 				A37519B4246E2ACE00A34278 /* DietChoices.swift in Sources */,
 				A37519CD2472158800A34278 /* CYAlertVC.swift in Sources */,
 				A37519AA246DBF2700A34278 /* SearchIngredientVC.swift in Sources */,
