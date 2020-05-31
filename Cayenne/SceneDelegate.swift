@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createCookbookNavigationController() -> UINavigationController {
-        let  cookbookListVC = CookbookListVC()
+        let cookbookListVC = CookbookListVC()
         cookbookListVC.title = "My Cookbooks"
         cookbookListVC.tabBarItem = UITabBarItem(title: "Cookbooks", image: UIImage(systemName: "book.fill"), tag: 1)
         return UINavigationController(rootViewController: cookbookListVC)

@@ -9,13 +9,22 @@
 import SwiftUI
 
 struct RecipeSUV: View {
+    let recipeID: Int?
+    @ObservedObject var recipeNetworkManager = RecipeNetworkManager()
+    
     var body: some View {
-        RecipeVC()
+        HStack{
+            Text("Hello world")
+        }
+        .onAppear{
+            self.recipeNetworkManager.fetchRecipe(for: self.recipeID!)
+        }
     }
+    
 }
 
 struct RecipeSUV_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeSUV()
+        RecipeSUV(recipeID: 0)
     }
 }
