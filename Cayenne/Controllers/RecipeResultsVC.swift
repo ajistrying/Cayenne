@@ -107,9 +107,8 @@ extension RecipeResultsVC: UITableViewDelegate {
         
         
         //Set specific recipe details into the detail screen
-        let recipeVC = RecipeVC()
-        recipeVC.recipeID = idOfRecipe
-        navigationController?.pushViewController(recipeVC, animated: true)
+//        let recipeSUV = RecipeSwiftUIView(recipeID: idOfRecipe)
+//        navigationController?.pushViewController(recipeSUV, animated: true)
         
     }
 }

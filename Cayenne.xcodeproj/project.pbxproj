@@ -27,8 +27,9 @@
 		A37519DD2473670100A34278 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37519DC2473670100A34278 /* Recipes.swift */; };
 		A37519E024736A7200A34278 /* RecipeListNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37519DF24736A7200A34278 /* RecipeListNetworkManager.swift */; };
 		A3751A0624760E1B00A34278 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3751A0524760E1B00A34278 /* ErrorMessage.swift */; };
+		A389DEB72484418C0083209F /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389DEB62484418C0083209F /* RecipeVC.swift */; };
+		A389DEB9248442620083209F /* RecipeSUV.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389DEB8248442620083209F /* RecipeSUV.swift */; };
 		A3A5D997247C135300A913FF /* ExtensionsForUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */; };
-		A3A5D99B247F64D500A913FF /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5D99A247F64D500A913FF /* RecipeVC.swift */; };
 		A3EBE2802482277600B354FE /* SpecificRecipeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE27F2482277600B354FE /* SpecificRecipeNetworkManager.swift */; };
 		A3EBE282248227BA00B354FE /* SpecificRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE281248227BA00B354FE /* SpecificRecipe.swift */; };
 /* End PBXBuildFile section */
@@ -56,8 +57,9 @@
 		A37519DC2473670100A34278 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		A37519DF24736A7200A34278 /* RecipeListNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListNetworkManager.swift; sourceTree = "<group>"; };
 		A3751A0524760E1B00A34278 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		A389DEB62484418C0083209F /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
+		A389DEB8248442620083209F /* RecipeSUV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSUV.swift; sourceTree = "<group>"; };
 		A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsForUIView.swift; sourceTree = "<group>"; };
-		A3A5D99A247F64D500A913FF /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
 		A3EBE27F2482277600B354FE /* SpecificRecipeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificRecipeNetworkManager.swift; sourceTree = "<group>"; };
 		A3EBE281248227BA00B354FE /* SpecificRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,7 +124,8 @@
 				A37519B7246F89EA00A34278 /* RecipeResultsVC.swift */,
 				A37519AB246DBF4600A34278 /* CookbookListVC.swift */,
 				A37519CC2472158800A34278 /* CYAlertVC.swift */,
-				A3A5D99A247F64D500A913FF /* RecipeVC.swift */,
+				A389DEB62484418C0083209F /* RecipeVC.swift */,
+				A389DEB8248442620083209F /* RecipeSUV.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,9 +252,9 @@
 			files = (
 				A37519B8246F89EA00A34278 /* RecipeResultsVC.swift in Sources */,
 				A3751A0624760E1B00A34278 /* ErrorMessage.swift in Sources */,
-				A3A5D99B247F64D500A913FF /* RecipeVC.swift in Sources */,
 				A3751996246CF8B900A34278 /* AppDelegate.swift in Sources */,
 				A3034C982479A56A00921A07 /* RecipeCell.swift in Sources */,
+				A389DEB72484418C0083209F /* RecipeVC.swift in Sources */,
 				A3A5D997247C135300A913FF /* ExtensionsForUIView.swift in Sources */,
 				A37519D02472364600A34278 /* ExtensionsForViewController.swift in Sources */,
 				A37519B6246EBFAA00A34278 /* CYButton.swift in Sources */,
@@ -266,6 +269,7 @@
 				A37519DD2473670100A34278 /* Recipes.swift in Sources */,
 				A3EBE2802482277600B354FE /* SpecificRecipeNetworkManager.swift in Sources */,
 				A37519B4246E2ACE00A34278 /* DietChoices.swift in Sources */,
+				A389DEB9248442620083209F /* RecipeSUV.swift in Sources */,
 				A37519CD2472158800A34278 /* CYAlertVC.swift in Sources */,
 				A37519AA246DBF2700A34278 /* SearchIngredientVC.swift in Sources */,
 				A37519C724720E1800A34278 /* CYAlertView.swift in Sources */,

@@ -1,27 +1,20 @@
 //
-//  RecipeVC.swift
+//  RecipeView.swift
 //  Cayenne
 //
-//  Created by Wellington Johnson on 5/27/20.
+//  Created by Wellington Johnson on 5/31/20.
 //  Copyright © 2020 Wellington Johnson. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import SwiftUI
 
-class RecipeVC: UIViewController {
-    
-    var recipeID: Int!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        guard let id = recipeID else {return}
-        print(id)
+struct RecipeVC: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        return UIViewController()
     }
     
-    
-    
-    
-
-
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        
+    }
 }
