@@ -17,7 +17,15 @@ struct RecipeSUV: View {
             Text("Hello world")
         }
         .onAppear{
-            self.recipeNetworkManager.fetchRecipe(for: self.recipeID!)
+            self.recipeNetworkManager.fetchRecipe(for: self.recipeID!) { result in
+                
+                switch result {
+                case .success(let results):
+                    print("Success")
+                case .failure(let error):
+                    print("Error")
+                }
+            }
         }
     }
     
