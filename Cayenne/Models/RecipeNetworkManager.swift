@@ -9,13 +9,11 @@
 import UIKit
 
 
-class RecipeNetworkManager: ObservableObject {
+class RecipeNetworkManager {
     
     
     let headers = ["x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
                    "x-rapidapi-key": "yRidRIoQXOmsh896HpN3xh0f58lyp1g3TRujsnrvsHgBvrclVt"]
-    
-    @Published var recipe = SpecificRecipe()
     
     //Function to fetch the specific recipe given the id
     func fetchRecipe(for recipeID: Int, closure: @escaping(Result<SpecificRecipe,ErrorMessage>) -> Void){

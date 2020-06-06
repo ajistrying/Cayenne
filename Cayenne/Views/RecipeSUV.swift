@@ -14,16 +14,16 @@ struct RecipeSUV: View {
     
     var body: some View {
         HStack{
-            Text("Hello world")
+            Text(recipeNetworkManager.recipe.title!)
         }
         .onAppear{
             self.recipeNetworkManager.fetchRecipe(for: self.recipeID!) { result in
                 
                 switch result {
-                case .success(let results):
-                    print("Success")
+                case .success(_):
+                    print(self.recipeNetworkManager.recipe.title!)
                 case .failure(let error):
-                    print("Error")
+                    print(error)
                 }
             }
         }

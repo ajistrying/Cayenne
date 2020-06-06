@@ -27,7 +27,6 @@
 		A37519DD2473670100A34278 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37519DC2473670100A34278 /* Recipes.swift */; };
 		A37519E024736A7200A34278 /* RecipeListNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37519DF24736A7200A34278 /* RecipeListNetworkManager.swift */; };
 		A3751A0624760E1B00A34278 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3751A0524760E1B00A34278 /* ErrorMessage.swift */; };
-		A389DEBD24845E840083209F /* RecipeSUV.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389DEBC24845E840083209F /* RecipeSUV.swift */; };
 		A389DEBF24845EC50083209F /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A389DEBE24845EC50083209F /* RecipeVC.swift */; };
 		A3A5D997247C135300A913FF /* ExtensionsForUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */; };
 		A3EBE2802482277600B354FE /* RecipeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE27F2482277600B354FE /* RecipeNetworkManager.swift */; };
@@ -57,7 +56,6 @@
 		A37519DC2473670100A34278 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		A37519DF24736A7200A34278 /* RecipeListNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListNetworkManager.swift; sourceTree = "<group>"; };
 		A3751A0524760E1B00A34278 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
-		A389DEBC24845E840083209F /* RecipeSUV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSUV.swift; sourceTree = "<group>"; };
 		A389DEBE24845EC50083209F /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
 		A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsForUIView.swift; sourceTree = "<group>"; };
 		A3EBE27F2482277600B354FE /* RecipeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNetworkManager.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				A37519CE2472360900A34278 /* Extensions */,
 				A37519BB246F8D5400A34278 /* Models */,
 				A37519B9246F8D1000A34278 /* Controllers */,
-				A389DEBB24845E0D0083209F /* Views */,
 				A3751995246CF8B900A34278 /* AppDelegate.swift */,
 				A3751997246CF8B900A34278 /* SceneDelegate.swift */,
 				A375199E246CF8BA00A34278 /* Assets.xcassets */,
@@ -170,14 +167,6 @@
 				A3751A0524760E1B00A34278 /* ErrorMessage.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		A389DEBB24845E0D0083209F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A389DEBC24845E840083209F /* RecipeSUV.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +258,6 @@
 				A37519DD2473670100A34278 /* Recipes.swift in Sources */,
 				A3EBE2802482277600B354FE /* RecipeNetworkManager.swift in Sources */,
 				A37519B4246E2ACE00A34278 /* DietChoices.swift in Sources */,
-				A389DEBD24845E840083209F /* RecipeSUV.swift in Sources */,
 				A37519CD2472158800A34278 /* CYAlertVC.swift in Sources */,
 				A37519AA246DBF2700A34278 /* SearchIngredientVC.swift in Sources */,
 				A37519C724720E1800A34278 /* CYAlertView.swift in Sources */,

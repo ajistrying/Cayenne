@@ -12,40 +12,40 @@ import SwiftUI
 class RecipeVC: UIViewController {
     
     var recipeID: Int?
+    let recipeNetworkManager = RecipeNetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewController()
+        
         if let recipeID = recipeID {
-            addRecipeView(for: recipeID)
+            getRecipe(for: recipeID)
+        }
+        
+    }
+    
+    
+    func configureViewController(){
+        view.backgroundColor = .systemBackground
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    
+    
+    
+    
+    func getRecipe(for recipeID: Int){
+        recipeNetworkManager.fetchRecipe(for: recipeID) { result in
+            
+            switch result {
+            case .success(let results):
+                print(results)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
 }
 
-private extension RecipeVC {
-    func addRecipeView(for id: Int) {
-        //Create child controller
-        let recipeView = RecipeSUV(recipeID: id)
-        let controller = UIHostingController(rootView: recipeView)
-        
-        //Add child controller to parent controller
-        addChild(controller)
-        //Add the child view to parent view
-        view.addSubview(controller.view)
-        //Call did move after adding the child controller to the parent
-        controller.didMove(toParent: self)
-        
-        //Add constraints for the child controller
-        controller.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            controller.view.widthAnchor.constraint(equalTo: view.widthAnchor),
-            controller.view.heightAnchor.constraint(equalTo: view.heightAnchor),
-            controller.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-    }
-    
-    
-    
-}
