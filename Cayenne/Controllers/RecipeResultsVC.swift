@@ -90,17 +90,22 @@ class RecipeResultsVC: UIViewController {
             return recipe.title.lowercased().contains(filter.lowercased())
         }
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section,Recipe>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(filteredRecipes)
-        DispatchQueue.main.async {
-            self.dataSource.apply(snapshot, animatingDifferences: true)
+        if isSearchBarEmpty {
+            createAndApplySnapshotToDataSource()
+        } else {
+            var snapshot = NSDiffableDataSourceSnapshot<Section,Recipe>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(filteredRecipes)
+            DispatchQueue.main.async {
+                self.dataSource.apply(snapshot, animatingDifferences: true)
+            }
         }
+        
     }
     
     
     
-// MARK: - Configure Search Bar
+// MARK: - Configure Search Bar Functionality
     func configureSearchController(){
         // 1 searchResultsUpdater is a property on UISearchController that conforms to the new protocol, UISearchResultsUpdating. With this protocol, UISearchResultsUpdating will inform your class of any text changes within the UISearchBar.
         searchController.searchResultsUpdater = self
