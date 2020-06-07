@@ -25,17 +25,11 @@ class RecipeResultsVC: UIViewController {
     
     //Initialize an empty list of Recipes to place the filtered results in
     var filteredRecipes: [Recipe] = []
-    
     //By initializing UISearchController with a nil value for searchResultsController, you’re telling the search controller that you want to use the same view you’re searching to display the results.
     let searchController = UISearchController(searchResultsController: nil)
-    
     //A Boolean to tell if the searchbar is empty or not
     var isSearchBarEmpty: Bool {
         searchController.searchBar.text?.isEmpty ?? true
-    }
-    // A Boolean to tell if Im currently using filtering or not
-    var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
     }
 
     
@@ -66,6 +60,24 @@ class RecipeResultsVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    // MARK: - Configure Search Bar Functionality
+    func configureSearchController(){
+        // 1 Set searchResultsUpdater to self.
+        searchController.searchResultsUpdater = self
+        
+        // 2 Turn off default behavior of dimming background during searching.
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        // 3 Set the placeholder to something that’s specific to this app.
+        searchController.searchBar.placeholder = "Search Recipes"
+        
+        // 4 Add the searchBar to the navigationItem. This is necessary because Interface Builder is not yet compatible with UISearchController.
+        navigationItem.searchController = searchController
+        
+        // 5 Ensure that the search bar doesn’t remain on the screen if the user navigates to another view controller while the UISearchController is active.
+        definesPresentationContext = true
+    }
+    
     
     func getRecipes() {
         recipeListNetworkManager.getRecipeList(for: searchQuery, diet: dietQuery) { [weak self] result in
@@ -84,44 +96,6 @@ class RecipeResultsVC: UIViewController {
     
     
     
-    // Function used to filter the recipe list based ont he text entered in the search bar
-    func performQuery(with filter: String){
-        filteredRecipes = recipeResults.filter { (recipe) -> Bool in
-            return recipe.title.lowercased().contains(filter.lowercased())
-        }
-        
-        if isSearchBarEmpty {
-            createAndApplySnapshotToDataSource()
-        } else {
-            var snapshot = NSDiffableDataSourceSnapshot<Section,Recipe>()
-            snapshot.appendSections([.main])
-            snapshot.appendItems(filteredRecipes)
-            DispatchQueue.main.async {
-                self.dataSource.apply(snapshot, animatingDifferences: true)
-            }
-        }
-        
-    }
-    
-    
-    
-// MARK: - Configure Search Bar Functionality
-    func configureSearchController(){
-        // 1 searchResultsUpdater is a property on UISearchController that conforms to the new protocol, UISearchResultsUpdating. With this protocol, UISearchResultsUpdating will inform your class of any text changes within the UISearchBar.
-        searchController.searchResultsUpdater = self
-        
-        // 2 By default, UISearchController obscures the view controller containing the information you’re searching. This is useful if you’re using another view controller for your searchResultsController. In this instance, you’ve set the current view to show the results, so you don’t want to obscure your view.
-        searchController.obscuresBackgroundDuringPresentation = false
-        
-        // 3 Here, you set the placeholder to something that’s specific to this app.
-        searchController.searchBar.placeholder = "Search Recipes"
-        
-        // 4 New for iOS 11, you add the searchBar to the navigationItem. This is necessary because Interface Builder is not yet compatible with UISearchController.
-        navigationItem.searchController = searchController
-        
-        // 5 Finally, by setting definesPresentationContext on your view controller to true, you ensure that the search bar doesn’t remain on the screen if the user navigates to another view controller while the UISearchController is active.
-        definesPresentationContext = true
-    }
     
     
 // MARK: - Configure the table view for recipes and its data source and data snapshot combo
@@ -152,9 +126,36 @@ class RecipeResultsVC: UIViewController {
         }
     }
     
+    // Function used to filter the recipe list based on the text entered in the search bar
+    func performQuery(with filter: String){
+        filteredRecipes = recipeResults.filter { (recipe) -> Bool in
+            return recipe.title.lowercased().contains(filter.lowercased())
+        }
+        
+        if isSearchBarEmpty {
+            createAndApplySnapshotToDataSource()
+        } else {
+            var snapshot = NSDiffableDataSourceSnapshot<Section,Recipe>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(filteredRecipes)
+            DispatchQueue.main.async {
+                self.dataSource.apply(snapshot, animatingDifferences: true)
+            }
+        }
+    }
+    
 }
 
-// MARK: - Extensions
+// MARK: - Delegate Extensions
+
+//Whenever the user adds or removes text in the search bar, the UISearchController will inform the MasterViewController class of the change via a call to updateSearchResults(for:), which in turn calls filterRecipes(_:)
+extension RecipeResultsVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        performQuery(with: searchBar.text ?? "")
+    }
+}
+
 
 //Extend out to passing this recipe id to another network manager to handle pulling a single recipe to display
 extension RecipeResultsVC: UITableViewDelegate {
@@ -170,11 +171,4 @@ extension RecipeResultsVC: UITableViewDelegate {
 }
 
 
-//Whenever the user adds or removes text in the search bar, the UISearchController will inform the MasterViewController class of the change via a call to updateSearchResults(for:), which in turn calls filterRecipes(_:)
-extension RecipeResultsVC: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        performQuery(with: searchBar.text ?? "")
-    }
-}
 

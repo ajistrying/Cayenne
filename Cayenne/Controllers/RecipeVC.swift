@@ -32,9 +32,6 @@ class RecipeVC: UIViewController {
     }
     
     
-    
-    
-    
     func getRecipe(for recipeID: Int){
         recipeNetworkManager.fetchRecipe(for: recipeID) { result in
             

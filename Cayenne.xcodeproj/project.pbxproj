@@ -31,6 +31,7 @@
 		A3A5D997247C135300A913FF /* ExtensionsForUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */; };
 		A3EBE2802482277600B354FE /* RecipeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE27F2482277600B354FE /* RecipeNetworkManager.swift */; };
 		A3EBE282248227BA00B354FE /* SpecificRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE281248227BA00B354FE /* SpecificRecipe.swift */; };
+		A3FA1C4C248CA26600D43523 /* FilterForRecipeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA1C4B248CA26600D43523 /* FilterForRecipeListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		A3A5D996247C135300A913FF /* ExtensionsForUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsForUIView.swift; sourceTree = "<group>"; };
 		A3EBE27F2482277600B354FE /* RecipeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNetworkManager.swift; sourceTree = "<group>"; };
 		A3EBE281248227BA00B354FE /* SpecificRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificRecipe.swift; sourceTree = "<group>"; };
+		A3FA1C4B248CA26600D43523 /* FilterForRecipeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterForRecipeListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				A37519AB246DBF4600A34278 /* CookbookListVC.swift */,
 				A37519CC2472158800A34278 /* CYAlertVC.swift */,
 				A389DEBE24845EC50083209F /* RecipeVC.swift */,
+				A3FA1C4B248CA26600D43523 /* FilterForRecipeListVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				A3EBE2802482277600B354FE /* RecipeNetworkManager.swift in Sources */,
 				A37519B4246E2ACE00A34278 /* DietChoices.swift in Sources */,
 				A37519CD2472158800A34278 /* CYAlertVC.swift in Sources */,
+				A3FA1C4C248CA26600D43523 /* FilterForRecipeListVC.swift in Sources */,
 				A37519AA246DBF2700A34278 /* SearchIngredientVC.swift in Sources */,
 				A37519C724720E1800A34278 /* CYAlertView.swift in Sources */,
 			);
