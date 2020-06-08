@@ -16,6 +16,7 @@ struct SpecificRecipe: Codable {
     let creditsText, sourceName: String
     let extendedIngredients: [ExtendedIngredient]
     let title: String
+    let id: Int
     let readyInMinutes, servings: Int
     let sourceURL: String?
     let image: String?

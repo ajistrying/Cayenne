@@ -44,6 +44,7 @@ class RecipeResultsVC: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureSearchController()
+        configureFilterButton()
         configureTableView()
         getRecipes()
         configureTableViewDataSource()
@@ -60,7 +61,7 @@ class RecipeResultsVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    // MARK: - Configure Search Bar Functionality
+// MARK: - Configure Navigation Items
     func configureSearchController(){
         // 1 Set searchResultsUpdater to self.
         searchController.searchResultsUpdater = self
@@ -78,6 +79,14 @@ class RecipeResultsVC: UIViewController {
         definesPresentationContext = true
     }
     
+    // TODO: Address filter button to present filters VC modally
+    func configureFilterButton(){
+        let filterButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = filterButton
+    }
+   
+
+// MARK: - Function to get the recipes
     
     func getRecipes() {
         recipeListNetworkManager.getRecipeList(for: searchQuery, diet: dietQuery) { [weak self] result in

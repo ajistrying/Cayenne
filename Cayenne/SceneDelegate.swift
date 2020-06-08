@@ -47,9 +47,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func createTabBar() -> UITabBarController{
-        let tabbar = UITabBarController()
-        tabbar.viewControllers = [createSearchIngredientNavigationController(),createCookbookNavigationController()]
-        return tabbar
+        let tabbarController = UITabBarController()
+        tabbarController.viewControllers = [createSearchIngredientNavigationController(),createCookbookNavigationController()]
+        return tabbarController
     }
     
     
