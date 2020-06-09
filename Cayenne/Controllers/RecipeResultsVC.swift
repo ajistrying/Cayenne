@@ -74,9 +74,11 @@ class RecipeResultsVC: UIViewController {
         
         // 4 Add the searchBar to the navigationItem. This is necessary because Interface Builder is not yet compatible with UISearchController.
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         // 5 Ensure that the search bar doesn’t remain on the screen if the user navigates to another view controller while the UISearchController is active.
         definesPresentationContext = true
+        
     }
     
     // TODO: Address filter button to present filters VC modally
@@ -96,6 +98,9 @@ class RecipeResultsVC: UIViewController {
             switch result {
             case .success(let results):
                 self.recipeResults = results.results
+                if self.recipeResults.count == 0 {
+                    self.popAlertView(alertTitle: "", alertBody: "No results found for this ingredient and diet choice, please try again!", alertButtonTitle: "Ok")
+                }
                 self.createAndApplySnapshotToDataSource()
             case .failure(let error):
                 self.popAlertView(alertTitle: "Could not retrieve results", alertBody: error.rawValue, alertButtonTitle: "Ok")

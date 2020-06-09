@@ -15,6 +15,10 @@ struct DietChoices {
     "Lacto Vegetarian",
     "Ovo Vegetarian",
     "Vegan",
-    "Vegetarian"
+    "Vegetarian",
+    "Gluten Free",
+    "Ketogenic",
+    "Paleo",
+    "Whole 30"
     ]
 }

@@ -11,21 +11,18 @@ import UIKit
 
 class RecipeNetworkManager {
     
-    
-    let headers = ["x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                   "x-rapidapi-key": "yRidRIoQXOmsh896HpN3xh0f58lyp1g3TRujsnrvsHgBvrclVt"]
+    let keys = Keys()
     
     //Function to fetch the specific recipe given the id
     func fetchRecipe(for recipeID: Int, closure: @escaping(Result<SpecificRecipe,ErrorMessage>) -> Void){
-        let baseURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/\(recipeID)/information"
+        let baseURL = "https://api.spoonacular.com/recipes/\(recipeID)/information?apiKey=\(keys.spoonAPIKey)"
         
         guard let url = URL(string: baseURL) else {
             closure(.failure(.invalidRequest))
             return
         }
         
-        var recipeRequest = URLRequest(url: url)
-        recipeRequest.allHTTPHeaderFields = headers
+        let recipeRequest = URLRequest(url: url)
         
         let task = URLSession.shared.dataTask(with: recipeRequest) { (data, response, error) in
         

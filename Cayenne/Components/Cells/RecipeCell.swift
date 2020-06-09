@@ -90,7 +90,7 @@ class RecipeCell: UITableViewCell {
         
         cookTimeLabel.leadingAnchor.constraint(equalTo: recipeTitleLabel.trailingAnchor, constant: 10).isActive     = true
         cookTimeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive                    = true
-        cookTimeLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive                               = true
+        cookTimeLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive                               = true
         
     }
     
@@ -109,13 +109,13 @@ class RecipeCell: UITableViewCell {
     func configureGetThatRecipeButton() {
         addSubview(getThatRecipeButton)
         getThatRecipeButton.translatesAutoresizingMaskIntoConstraints                                  = false
-        getThatRecipeButton.setBackgroundImage(UIImage(systemName: "arrow.right.circle"), for: .normal)
+        getThatRecipeButton.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
         getThatRecipeButton.tintColor = .black
         
         getThatRecipeButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive                  = true
         getThatRecipeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
-        getThatRecipeButton.widthAnchor.constraint(equalToConstant: 50).isActive                       = true
-        getThatRecipeButton.heightAnchor.constraint(equalToConstant: 50).isActive                      = true
+        getThatRecipeButton.widthAnchor.constraint(equalToConstant: 30).isActive                       = true
+        getThatRecipeButton.heightAnchor.constraint(equalToConstant: 30).isActive                      = true
     }
     
 }

@@ -11,38 +11,51 @@ import Foundation
 
 class RecipeListNetworkManager {
     
-    let baseURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?"
-    let headers = ["x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                   "x-rapidapi-key": "yRidRIoQXOmsh896HpN3xh0f58lyp1g3TRujsnrvsHgBvrclVt"]
+    let betterBaseURL = "https://api.spoonacular.com/recipes/search"
+    let keys = Keys()
     
     func getRecipeList(for ingredient: String,diet: String, closure: @escaping(Result<Recipes,ErrorMessage>) -> Void){
         
         // Build the URL Request with URLRequest
         var endpoint = ""
-        let numberOfResults: Int = 50
+        let numberOfResults: Int = 10
         
         switch diet {
         case "":
-            endpoint = baseURL + "number=\(numberOfResults)&query=\(ingredient)"
+            endpoint = betterBaseURL + "?query=\(ingredient)&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
         case "None":
-            endpoint = baseURL + "number=\(numberOfResults)&query=\(ingredient)"
-        case "Lacto Vegetarian":
-            endpoint = baseURL + "number=\(numberOfResults)&diet=lacto%20vegetarian&query=\(ingredient)"
-        case "Ovo Vegetarian":
-            endpoint = baseURL + "number=\(numberOfResults)&diet=ovo%20vegetarian&query=\(ingredient)"
+            endpoint = betterBaseURL + "?query=\(ingredient)&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Lacto-Vegetarian":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Lacto-Vegetarian&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Ovo-Vegetarian":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Ovo-Vegetarian&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Vegan":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Vegan&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Vegetarian":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Vegetarian&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Gluten Free":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Gluten-Free&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Ketogenic":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Ketogenic&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Paleo":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Paleo&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
+        case "Whole 30":
+            endpoint = betterBaseURL + "?query=\(ingredient)&diet=Whole-30&number=\(numberOfResults)&apiKey=\(keys.spoonAPIKey)"
         default:
-            endpoint = baseURL + "number=\(numberOfResults)&diet=\(diet)&query=\(ingredient)"
+            endpoint = betterBaseURL + "?query=\(ingredient)&number=\(numberOfResults)&apikey=\(keys.spoonAPIKey)"
         }
+        
         
         guard let url = URL(string: endpoint) else {
             closure(.failure(.invalidRequest))
             return
         }
+        print(url)
+        
         
         // Run the URLRequest with URLSession
-        
-        var ingredientRequest = URLRequest(url: url)
-        ingredientRequest.allHTTPHeaderFields = headers
+        let ingredientRequest = URLRequest(url: url)
+        print(ingredientRequest)
     
         
         let task = URLSession.shared.dataTask(with: ingredientRequest) { (data, response, error) in

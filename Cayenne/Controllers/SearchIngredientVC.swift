@@ -83,7 +83,7 @@ class SearchIngredientVC: UIViewController {
         NSLayoutConstraint.activate([
             cayenneLogoImageView.widthAnchor.constraint(equalToConstant: 200),
             cayenneLogoImageView.heightAnchor.constraint(equalToConstant: 200),
-            cayenneLogoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70),
+            cayenneLogoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             cayenneLogoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
     }
@@ -125,7 +125,8 @@ class SearchIngredientVC: UIViewController {
         NSLayoutConstraint.activate([
             dietPickerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             dietPickerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            dietPickerView.topAnchor.constraint(equalTo: dietLabel.bottomAnchor, constant: 1)
+            dietPickerView.topAnchor.constraint(equalTo: dietLabel.bottomAnchor, constant: 10),
+            dietPickerView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
@@ -136,7 +137,7 @@ class SearchIngredientVC: UIViewController {
         searchButton.addTarget(self, action: #selector(pushToRecipeResultsVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            searchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+            searchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             searchButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 70),
             searchButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -70),
             searchButton.heightAnchor.constraint(equalToConstant: 50)

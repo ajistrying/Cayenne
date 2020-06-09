@@ -32,6 +32,7 @@
 		A3EBE2802482277600B354FE /* RecipeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE27F2482277600B354FE /* RecipeNetworkManager.swift */; };
 		A3EBE282248227BA00B354FE /* SpecificRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EBE281248227BA00B354FE /* SpecificRecipe.swift */; };
 		A3FA1C4C248CA26600D43523 /* FilterForRecipeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA1C4B248CA26600D43523 /* FilterForRecipeListVC.swift */; };
+		A3FA1C50248F0D3D00D43523 /* PrivateKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA1C4F248F0D3D00D43523 /* PrivateKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		A3EBE27F2482277600B354FE /* RecipeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNetworkManager.swift; sourceTree = "<group>"; };
 		A3EBE281248227BA00B354FE /* SpecificRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificRecipe.swift; sourceTree = "<group>"; };
 		A3FA1C4B248CA26600D43523 /* FilterForRecipeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterForRecipeListVC.swift; sourceTree = "<group>"; };
+		A3FA1C4F248F0D3D00D43523 /* PrivateKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				A37519B3246E2ACE00A34278 /* DietChoices.swift */,
 				A3751A0524760E1B00A34278 /* ErrorMessage.swift */,
+				A3FA1C4F248F0D3D00D43523 /* PrivateKeys.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				A3EBE282248227BA00B354FE /* SpecificRecipe.swift in Sources */,
 				A389DEBF24845EC50083209F /* RecipeVC.swift in Sources */,
 				A37519CB2472120900A34278 /* CYTitleLabel.swift in Sources */,
+				A3FA1C50248F0D3D00D43523 /* PrivateKeys.swift in Sources */,
 				A3751998246CF8B900A34278 /* SceneDelegate.swift in Sources */,
 				A37519B0246DDDDB00A34278 /* CYLabel.swift in Sources */,
 				A37519C9247210C800A34278 /* CYBodyLabel.swift in Sources */,
