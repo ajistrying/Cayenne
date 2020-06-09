@@ -51,7 +51,7 @@ class RecipeNetworkManager {
                     let recipe = try JSONDecoder().decode(SpecificRecipe.self, from: data)
                     closure(.success(recipe))
                 } catch {
-                    closure(.failure(.couldNotRetrieveData))
+                    closure(.failure(.couldNotRetrieveRecipe))
                 }
                 
         }
