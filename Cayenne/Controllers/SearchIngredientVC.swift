@@ -12,9 +12,9 @@ class SearchIngredientVC: UIViewController {
     
 // MARK: - UI Variables
     let cayenneLogoImageView = UIImageView()
+    let dietPickerView = UIPickerView()
     let searchIngredientTextField = CYTextField()
     let dietLabel = CYLabel(text: "Diet Choice",font: UIFont.preferredFont(forTextStyle: .largeTitle))
-    let dietPickerView = UIPickerView()
     let searchButton = CYButton(title: "Search",backgroundColor: .systemPink)
     
     

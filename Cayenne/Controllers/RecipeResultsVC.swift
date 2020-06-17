@@ -10,8 +10,6 @@ import UIKit
 
 class RecipeResultsVC: UIViewController {
     
-    
-    
     enum Section {
         case main
     }
@@ -32,12 +30,12 @@ class RecipeResultsVC: UIViewController {
         searchController.searchBar.text?.isEmpty ?? true
     }
 
-    
     //Initialize a table view
     var recipesTableView: UITableView!
     
     //Create a diffable data source
     var dataSource: UITableViewDiffableDataSource<Section,Recipe>!
+    
     
     
     override func viewDidLoad() {
@@ -142,8 +140,8 @@ class RecipeResultsVC: UIViewController {
     
     // Function used to filter the recipe list based on the text entered in the search bar
     func performQuery(with filter: String){
-        filteredRecipes = recipeResults.filter { (recipe) -> Bool in
-            return recipe.title.lowercased().contains(filter.lowercased())
+        filteredRecipes = recipeResults.filter{
+            return $0.title.lowercased().contains(filter.lowercased())
         }
         
         if isSearchBarEmpty {
