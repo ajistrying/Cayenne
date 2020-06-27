@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A3034C982479A56A00921A07 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3034C972479A56A00921A07 /* RecipeCell.swift */; };
+		A308E29424A6F3D60014DAC5 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308E29324A6F3D60014DAC5 /* RecipeCollectionViewCell.swift */; };
+		A308E29624A6F91F0014DAC5 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308E29524A6F91F0014DAC5 /* UIHelper.swift */; };
+		A308E29A24A711B00014DAC5 /* CYRecipeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308E29924A711B00014DAC5 /* CYRecipeImageView.swift */; };
 		A3751996246CF8B900A34278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3751995246CF8B900A34278 /* AppDelegate.swift */; };
 		A3751998246CF8B900A34278 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3751997246CF8B900A34278 /* SceneDelegate.swift */; };
 		A375199F246CF8BA00A34278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A375199E246CF8BA00A34278 /* Assets.xcassets */; };
@@ -36,7 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A3034C972479A56A00921A07 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		A308E29324A6F3D60014DAC5 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A308E29524A6F91F0014DAC5 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		A308E29924A711B00014DAC5 /* CYRecipeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYRecipeImageView.swift; sourceTree = "<group>"; };
 		A3751992246CF8B900A34278 /* Cayenne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cayenne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3751995246CF8B900A34278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3751997246CF8B900A34278 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +84,7 @@
 		A3034C942479A40B00921A07 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A3034C972479A56A00921A07 /* RecipeCell.swift */,
+				A308E29324A6F3D60014DAC5 /* RecipeCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -141,6 +145,7 @@
 				A37519C624720E1800A34278 /* CYAlertView.swift */,
 				A37519C8247210C800A34278 /* CYBodyLabel.swift */,
 				A37519CA2472120900A34278 /* CYTitleLabel.swift */,
+				A308E29924A711B00014DAC5 /* CYRecipeImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 				A37519B3246E2ACE00A34278 /* DietChoices.swift */,
 				A3751A0524760E1B00A34278 /* ErrorMessage.swift */,
 				A3FA1C4F248F0D3D00D43523 /* PrivateKeys.swift */,
+				A308E29524A6F91F0014DAC5 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -247,8 +253,8 @@
 			files = (
 				A37519B8246F89EA00A34278 /* RecipeResultsVC.swift in Sources */,
 				A3751A0624760E1B00A34278 /* ErrorMessage.swift in Sources */,
+				A308E29424A6F3D60014DAC5 /* RecipeCollectionViewCell.swift in Sources */,
 				A3751996246CF8B900A34278 /* AppDelegate.swift in Sources */,
-				A3034C982479A56A00921A07 /* RecipeCell.swift in Sources */,
 				A3A5D997247C135300A913FF /* ExtensionsForUIView.swift in Sources */,
 				A37519D02472364600A34278 /* ExtensionsForViewController.swift in Sources */,
 				A37519B6246EBFAA00A34278 /* CYButton.swift in Sources */,
@@ -257,6 +263,8 @@
 				A389DEBF24845EC50083209F /* RecipeVC.swift in Sources */,
 				A37519CB2472120900A34278 /* CYTitleLabel.swift in Sources */,
 				A3FA1C50248F0D3D00D43523 /* PrivateKeys.swift in Sources */,
+				A308E29A24A711B00014DAC5 /* CYRecipeImageView.swift in Sources */,
+				A308E29624A6F91F0014DAC5 /* UIHelper.swift in Sources */,
 				A3751998246CF8B900A34278 /* SceneDelegate.swift in Sources */,
 				A37519B0246DDDDB00A34278 /* CYLabel.swift in Sources */,
 				A37519C9247210C800A34278 /* CYBodyLabel.swift in Sources */,

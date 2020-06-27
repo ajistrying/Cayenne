@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeResultsVC: UIViewController {
+class RecipeResultsVC: UIViewController, UICollectionViewDelegate{
     
     enum Section {
         case main
@@ -29,12 +29,11 @@ class RecipeResultsVC: UIViewController {
     var isSearchBarEmpty: Bool {
         searchController.searchBar.text?.isEmpty ?? true
     }
-
-    //Initialize a table view
-    var recipesTableView: UITableView!
+    
+    var recipesCollectionView: UICollectionView!
     
     //Create a diffable data source
-    var dataSource: UITableViewDiffableDataSource<Section,Recipe>!
+    var dataSource: UICollectionViewDiffableDataSource<Section,Recipe>!
     
     
     
@@ -43,9 +42,10 @@ class RecipeResultsVC: UIViewController {
         configureViewController()
         configureSearchController()
         configureFilterButton()
-        configureTableView()
+        configureCollectionView()
         getRecipes()
-        configureTableViewDataSource()
+        configureCollectionViewDataSource()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,24 +110,28 @@ class RecipeResultsVC: UIViewController {
     
     
     
-// MARK: - Configure the table view for recipes and its data source and data snapshot combo
-    func configureTableView(){
-        recipesTableView = UITableView(frame: view.bounds, style: .plain)
-        view.addSubview(recipesTableView)
-        recipesTableView.delegate = self
-        recipesTableView.rowHeight = 100
-        recipesTableView.pin(to: view)
-        recipesTableView.backgroundColor = .systemBackground
-        recipesTableView.register(RecipeCell.self, forCellReuseIdentifier: RecipeCell.reuseID)
-    }
-
-    func configureTableViewDataSource(){
-        dataSource = UITableViewDiffableDataSource<Section,Recipe>(tableView: recipesTableView) { (recipesTableView, indexPath, recipe ) -> UITableViewCell? in
-            let cell = recipesTableView.dequeueReusableCell(withIdentifier: RecipeCell.reuseID, for: indexPath) as! RecipeCell
+// MARK: - Configure the collection view for recipes
+    
+    func configureCollectionView(){
+              recipesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createRecipeCollectionViewLayout(in: view))
+              recipesCollectionView.delegate = self
+              
+              view.addSubview(recipesCollectionView)
+              recipesCollectionView.pin(to: view)
+              recipesCollectionView.backgroundColor = .systemBackground
+              recipesCollectionView.register(RecipeCollectionViewCell.self, forCellWithReuseIdentifier: RecipeCollectionViewCell.reuseID)
+          }
+    
+   
+    func configureCollectionViewDataSource(){
+        dataSource = UICollectionViewDiffableDataSource<Section,Recipe>(collectionView: recipesCollectionView, cellProvider: { (recipesCollectionView, indexPath, recipe) -> UICollectionViewCell? in
+            let cell = recipesCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCollectionViewCell.reuseID, for: indexPath) as! RecipeCollectionViewCell
             cell.set(recipe: recipe)
             return cell
-        }
+        })
     }
+    
+    
     
     func createAndApplySnapshotToDataSource(){
         var snapshot = NSDiffableDataSourceSnapshot<Section,Recipe>()
@@ -167,20 +171,5 @@ extension RecipeResultsVC: UISearchResultsUpdating {
         performQuery(with: searchBar.text ?? "")
     }
 }
-
-
-//Extend out to passing this recipe id to another network manager to handle pulling a single recipe to display
-extension RecipeResultsVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = recipeResults[indexPath.row]
-        
-        //Set specific recipe details into the recipe view controller
-        let recipeVC = RecipeVC()
-        recipeVC.recipeID = row.id
-        navigationController?.pushViewController(recipeVC, animated: true)
-        
-    }
-}
-
 
 
